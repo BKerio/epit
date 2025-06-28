@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Building2, BarChart3, ClipboardList, Handshake } from "lucide-react";
 import Image1 from "@/assets/Image-001.png";
-import Image2 from "@/assets/Image-002.png";
-import Image3 from "@/assets/Image-003.png";
+import Image2 from "@/assets/image-002.png";
+import Image3 from "@/assets/image-003.png";
 
 // Define the structure for our interactive tabs
 type Tab = {
