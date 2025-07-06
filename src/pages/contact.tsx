@@ -50,9 +50,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: 'https://www.facebook.com/share/1AjYiTAhRy/', color: 'hover:text-emerald-500 dark:hover:text-emerald-400' },
-  { icon: Twitter, href: 'https://x.com/Millenium_Soln?t=LAjPcn3pBRR5ad8Q2xKvlQ&s=09', color: 'hover:text-blue-400 dark:hover:text-blue-300' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/company/millenium-solutions-ea-ltd/', color: 'hover:text-blue-700 dark:hover:text-blue-500' },
+  { icon: Facebook, href: '#', color: 'hover:text-emerald-500 dark:hover:text-emerald-400' },
+  { icon: Twitter, href: '#', color: 'hover:text-blue-400 dark:hover:text-blue-300' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/101302217/admin/dashboard/', color: 'hover:text-blue-700 dark:hover:text-blue-500' },
 ];
 
 const ContactPage: React.FC = () => {

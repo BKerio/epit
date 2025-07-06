@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {  Facebook,  Twitter,  Linkedin,  Home,  Info,  BookOpen,  PhoneCall,  MapPin,  Mail,  Settings } from "lucide-react";
+import {  Facebook,  Twitter,  Linkedin,  Home,  Info, PhoneCall,  MapPin,  Mail,  Settings } from "lucide-react";
 import { getCurrentYear } from "@/lib/utils";
 import { services } from "@/data";
 
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                 <Facebook className="h-8 w-8" />
               </a>
               <a
-                href="•	https://www.linkedin.com/company/101302217/admin/dashboard/"
+                href="https://www.linkedin.com/company/101302217/admin/dashboard/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-700 transition-colors"
