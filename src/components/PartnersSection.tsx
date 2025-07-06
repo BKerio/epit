@@ -1,19 +1,18 @@
 import React, { useLayoutEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { partnersList } from "@/data";
-import { HandHelping } from "lucide-react";
+import { PartnersList } from "@/data";
+import { HelpingHand } from "lucide-react";
 
 const PartnersSection: React.FC = () => {
-  const itemWidth = 240;
-  const gap = 24;
+  const itemWidth = 180;
+  const gap = 20;
   const cardFullWidth = itemWidth + gap;
 
-  // Reverse for rightward movement
-  const extendedPartners = partnersList.concat(partnersList).slice().reverse();
-  const totalOriginalWidth = partnersList.length * cardFullWidth;
+  const extendedPartners = PartnersList.concat(PartnersList);
+  const totalOriginalWidth = PartnersList.length * cardFullWidth;
 
   const controls = useAnimation();
-  const cycleDuration = 70;
+  const cycleDuration = 30; // seconds
 
   const startAnimation = () => {
     controls.start({
@@ -35,30 +34,23 @@ const PartnersSection: React.FC = () => {
   const handleMouseLeave = () => startAnimation();
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       <div className="container mx-auto px-6 relative">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="flex items-center justify-center my-4">
-            <div className="relative inline-flex items-center rounded-full px-2 py-1 border border-white/10 bg-black/50 shadow-md backdrop-blur-sm">
-              <span className="absolute inset-0 rounded-full border border-white/5 blur-sm opacity-30 pointer-events-none" />
-              <div className="relative inline-flex items-center bg-white text-black dark:bg-gray-800 dark:text-white font-semibold px-6 py-3 rounded-full text-lg shadow-inner border border-gray-200 dark:border-gray-700">
-                <HandHelping className="h-6 w-6 mr-3 text-[#A87C1F]" />
-                <span>Trusted by Leading Institutions</span>
-              </div>
+        <h2 className="flex items-center justify-center my-4">
+          <div className="relative inline-flex items-center rounded-full px-2 py-1 border border-white/10 bg-black/50 shadow-md backdrop-blur-sm">
+            <span className="absolute inset-0 rounded-full border border-white/5 blur-sm opacity-30 pointer-events-none" />
+            <div className="relative inline-flex items-center bg-white text-black dark:bg-gray-800 dark:text-white font-semibold px-6 py-3 rounded-full text-lg shadow-inner border border-gray-200 dark:border-gray-700">
+              <HelpingHand className="h-6 w-6 mr-3 text-[#A87C1F]" />
+              <span>Who we have worked with</span>
             </div>
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            We collaborate with visionary partners to drive innovation and create lasting impact across sectors.
-          </p>
-        </div>
+          </div>
+        </h2>
 
-        {/* Marquee Section */}
         <div
           className="relative overflow-hidden py-8"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          style={{ height: 160 }}
+          style={{ height: itemWidth + 60 }}
         >
           <motion.div
             className="flex items-center"
@@ -68,16 +60,22 @@ const PartnersSection: React.FC = () => {
             {extendedPartners.map((partner, index) => (
               <motion.div
                 key={`${partner.name}-${index}`}
-                style={{ width: itemWidth, flexShrink: 0 }}
-                className="bg-white/40 dark:bg-white/10 backdrop-blur-lg border border-white/30 shadow-md hover:shadow-2xl rounded-2xl p-6 flex items-center justify-center text-center text-gray-900 dark:text-white font-semibold text-lg transition-all duration-300 hover:scale-105"
+                style={{ width: itemWidth, marginRight: gap, flexShrink: 0 }}
+                className="flex flex-col items-center justify-between bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 border border-gray-200 dark:border-gray-700"
               >
-                {partner.name}
+                <div className="w-full h-40 flex items-center justify-center overflow-hidden mb-3 relative">
+                  <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="object-contain max-w-[105%] max-h-[105%] relative z-10"
+                  loading="lazy"
+                  />
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        {/* Footer Message */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +84,11 @@ const PartnersSection: React.FC = () => {
           className="font-serif mt-20 text-center text-gray-700 dark:text-gray-300 italic text-lg"
         >
           <p className="max-w-2xl mx-auto border-t border-b border-gray-400 dark:border-gray-600 py-4 px-6 rounded-md">
-            We proudly collaborate with <strong className="text-gray-900 dark:text-white">visionary partners</strong> who help us drive innovation and impact.
+            We collaborate with industry-leading partners to deliver{" "}
+            <strong className="text-gray-900 dark:text-white">
+              the best-in-class solutions
+            </strong>{" "}
+            for your business.
           </p>
         </motion.div>
       </div>

@@ -134,9 +134,10 @@ const Navbar = () => {
     dropdown: [
       { name: "Our Story", path: "/about" },
       { name: "Our Approach", path: "/methodology" },
-      { name: "Our Team Members", path: "#" },
     ],
   },
+
+  { name: "Certifications & Affiliations", path: "/certification" },
 
   {
     name: "Areas of Expertise",
@@ -154,30 +155,9 @@ const Navbar = () => {
         name: "Organizational Development",
         path: "/organizationaldevelopment",
       },
-      {
-        name: "Wellness & Inclusion Programs",
-        path: "/wellnessinclusion",
-      },
-      {
-        name: "Employee Engagement & Productivity",
-        path: "/employee-engagement",
-      },
-      {
-        name: "Policy Governance & Fundraising",
-        path: "/policy-governance-fundraising",
-      },
+     
     ],
   },
-
-  {
-    name: "Impact",
-    path: "#",
-    dropdown: [
-      { name: "Our Accomplishments", path: "#" },
-    ],
-  },
-
-  { name: "Resources", path: "/resources" },
   { name: "Contact Us", path: "/contact" },
 ];
   
@@ -202,15 +182,19 @@ const Navbar = () => {
               <span>+254 792 187 994</span>
             </a>
             <span className="hidden md:block text-black dark:text-gray-600">|</span>
-             <a href="mailto:info@epitomeconsulting.com" className="flex items-center gap-2 text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+             <a href="mailto:info@epitomeconsulting.co.ke" className="flex items-center gap-2 text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <Mail className="h-6 w-6 text-[#A87C1F]" />
-              <span>info@epitomeconsulting.com</span>
+              <span>info@epitomeconsulting.co.ke</span>
             </a>
           </div>
           <div className="flex items-center gap-x-5">
               <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter" className="text-[#A87C1F] dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"><Twitter className="h-7 w-7" /></a>
               <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="text-[#A87C1F] dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-600 transition-colors"><Facebook className="h-7 w-7" /></a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Linkedin" className="text-[#A87C1F] dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-500 transition-colors"><Linkedin className="h-7 w-7" /></a>
+              <a href="https://www.linkedin.com/company/101302217/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Linkedin" className="text-[#A87C1F] dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-500 transition-colors"><Linkedin className="h-7 w-7" /></a>
+              {/* Talk to Us Button */}
+              <Link to="/contact" className="ml-4 px-4 py-2 bg-[#A87C1F] text-white font-semibold rounded-lg shadow-md hover:bg-amber-700 transition-colors">
+                Talk to Us
+              </Link>
           </div>
         </div>
 

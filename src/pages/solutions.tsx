@@ -13,13 +13,13 @@ const Solutions: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
+      <section className="pt-20 pb-16 bg-blue-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
         <h2 className="flex items-center justify-center my-4">
           <div className="relative inline-flex items-center rounded-full px-2 py-1 border border-white/20 bg-black/50 shadow-md backdrop-blur-sm">
             <span className="absolute inset-0 rounded-full border border-white/10 blur-sm opacity-40 pointer-events-none" />
-            <span className="relative inline-block bg-white text-red-700 font-semibold px-8 py-3 rounded-full text-lg shadow-inner">
+            <span className="relative inline-block bg-white text-[#A87C1F] font-semibold px-8 py-3 rounded-full text-lg shadow-inner">
           Our Solutions
             </span>
           </div>
@@ -71,7 +71,7 @@ const Solutions: React.FC = () => {
                     <div className="mt-8">
                     <Link
                          to={service.path}
-                         className="group inline-flex items-center px-6 py-3 bg-red-500 text-white font-semibold rounded-full shadow-md hover:bg-red-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-400 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                         className="group inline-flex items-center px-6 py-3 bg-[#A87C1F] text-white font-semibold rounded-full shadow-md hover:bg-[#A87C1F] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-400 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
                        >
                          Learn More
                          <span
@@ -123,7 +123,7 @@ const Solutions: React.FC = () => {
                {/* Primary Button: Talk To Experts */}
              <Link
                to="/contact"
-               className="group flex items-center justify-center rounded-full border border-red-500 bg-red-500 px-6 py-2 text-white transition-colors duration-300 hover:bg-red-600 hover:border-red-600"
+               className="group flex items-center justify-center rounded-full border border-white bg-[#A87C1F] px-6 py-2 text-white transition-colors duration-300 hover:bg-[#A87C1F] hover:border-white hover:text-white"
              >
                <span className="mr-2 transform transition-transform duration-300 group-hover:translate-x-1">
                  Talk To Experts
@@ -136,13 +136,13 @@ const Solutions: React.FC = () => {
                {/* Secondary Button: Explore Solutions */}
                <Link
                  to="/solutions"
-                 className="group flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-500 px-6 py-2 text-gray-800 dark:text-gray-300 transition-colors duration-300 hover:border-red-500 hover:text-red-500"
+                 className="group flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-500 px-6 py-2 text-gray-800 dark:text-gray-300 transition-colors duration-300 hover:border-white hover:text-white hover:bg-gray-800 dark:hover:bg-gray-700"
                >
                  <span className="mr-2 transform transition-transform duration-300 group-hover:translate-x-1">
                    Explore Solutions
                  </span>
-                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 dark:border-gray-500 transition-all duration-300 group-hover:border-red-500 group-hover:rotate-45">
-                   <ArrowDownRight className="h-4 w-4 text-gray-600 dark:text-gray-400 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-red-500" />
+                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 dark:border-gray-500 transition-all duration-300 group-hover:border-white group-hover:rotate-45">
+                   <ArrowDownRight className="h-4 w-4 text-gray-600 dark:text-gray-400 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-[#A87C1F]" />
                  </span>
                </Link>
              </div>

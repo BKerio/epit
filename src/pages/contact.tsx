@@ -1,178 +1,181 @@
-import React, { useState } from 'react';
-import {  Mail,  Phone,  MapPin,  Clock,  Send,  Building2,  User,  MessageSquare,  CheckCircle,  Linkedin,  Twitter,  Globe } from 'lucide-react';
+// src/pages/ContactPage.tsx
+import { useEffect } from "react";
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, ArrowDownRight } from 'lucide-react';
+import Image5 from '@/assets/image-2.png';
+import { Link } from "react-router-dom";
+import ContactForm from '@/models/contact-form';
 
-const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const contactInfo = [
+  {
+    icon: MapPin,
+    title: 'Visit Us',
+    details: [
+      <a
+        href="https://www.google.com/maps?q=Kiambere+Road,+Upperhill,+Manga+Hse,+Ground+Floor"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:underline dark:text-white"
+      >
+        Kiambere Road, Upperhill, Manga Hse, Ground Floor
+      </a>
+    ],
+    color: 'text-emerald-500 dark:text-emerald-400',
+  },
+  {
+    icon: Phone,
+    title: 'General Inquiries',
+    details: [
+      'For general inquiries, please reach out to us at:',
+      <a
+        href="tel:+254725384554"
+        className="text-black hover:underline dark:text-white"
+      >
+        +254 725 384 554
+      </a>,
+      <a
+        href="tel:+254792187994"
+        className="text-black hover:underline dark:text-white"
+      >
+        +254 792 187 994
+      </a>,
+      <a
+        href="mailto:info@epitomeconsulting.co.ke"
+        className="text-black hover:underline dark:text-white"
+      >
+        info@epitomeconsulting.co.ke
+      </a>
+    ],
+    color: 'text-green-500 dark:text-green-400',
+  },
+];
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+const socialLinks = [
+  { icon: Facebook, href: 'https://www.facebook.com/share/1AjYiTAhRy/', color: 'hover:text-emerald-500 dark:hover:text-emerald-400' },
+  { icon: Twitter, href: 'https://x.com/Millenium_Soln?t=LAjPcn3pBRR5ad8Q2xKvlQ&s=09', color: 'hover:text-blue-400 dark:hover:text-blue-300' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/millenium-solutions-ea-ltd/', color: 'hover:text-blue-700 dark:hover:text-blue-500' },
+];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', company: '', phone: '', service: '', message: '' });
-    }, 3000);
-  };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email Us',
-      details: 'info@epitomeconsulting.com',
-      link: 'mailto:info@epitomeconsulting.com',
-      description: 'Send us an email anytime',
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      details: '+254 725 384 554',
-      link: 'tel:+254725384554',
-      description: 'Mon-Fri from 8am to 6pm',
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: 'Nairobi, Kenya',
-      link: 'https://maps.google.com/?q=Nairobi+Kenya',
-      description: 'Come say hello at our office',
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: 'Monday - Friday: 8:00 AM - 6:00 PM',
-      description: 'Weekend consultations by appointment',
-    },
-  ];
-
-  const services = [
-    'MERL Services',
-    'Strategic Planning',
-    'Capacity Building',
-    'Project Management',
-    'Innovation Advisory',
-    'Operational Excellence',
-    'Other',
-  ];
+const ContactPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="pt-16">
-      <section className="py-24 bg-gradient-to-br from-orange-100 to-red-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center bg-orange-200 text-orange-700 dark:bg-orange-900 dark:text-orange-200 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <MessageSquare className="w-4 h-4 mr-2" /> Get in Touch
+    <div className="min-h-screen bg-gradient-to-br from-white to-white/0 dark:from-gray-900 dark:to-gray-800">
+      {/* Hero Section */}
+      <div className="relative h-96">
+        <img
+          src={Image5}
+          alt="Contact Us"
+          className="absolute inset-0 w-full h-full object-cover filter brightness-90 dark:brightness-75"
+        />
+        <div className="absolute inset-0 bg-black opacity-50" />
+        <div className="relative flex items-center justify-center h-full px-4 text-center">
+          <div className="space-y-4">
+            <h1 className="text-5xl font-bold text-white drop-shadow">Contact Us</h1>
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+              Have questions about Epitome Consulting? We're here to help! Reach out to us for inquiries, support, or feedback.
+            </p>
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Let's Start Your Transformation
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Ready to take your organization to the next level? Contact us today to discuss your goals and how we can help.
-          </p>
         </div>
-      </section>
+      </div>
 
-      <section className="py-24 bg-white/50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Send Us a Message</h2>
-            {isSubmitted ? (
-              <div className="p-8 bg-green-100 border border-green-500 rounded-xl text-center text-green-800 dark:bg-green-900 dark:border-green-400 dark:text-green-100">
-                <CheckCircle className="w-16 h-16 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Message Sent Successfully!</h3>
-                <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+      {/* Contact Info Cards */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-20 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {contactInfo.map((info, idx) => (
+            <div
+              key={idx}
+              className="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 transform transition hover:scale-105 hover:shadow-xl"
+            >
+              <div className={`${info.color} mb-4`}>
+                <info.icon size={24} />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <InputField icon={User} label="Full Name *" name="name" value={formData.name} onChange={handleInputChange} required placeholder="Enter your full name" />
-                  <InputField icon={Mail} label="Email Address *" name="email" value={formData.email} onChange={handleInputChange} required placeholder="Enter your email" type="email" />
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <InputField icon={Building2} label="Company/Organization" name="company" value={formData.company} onChange={handleInputChange} placeholder="Enter company name" />
-                  <InputField icon={Phone} label="Phone Number" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Enter phone number" />
-                </div>
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Service of Interest</label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                  >
-                    <option value="">Select a service</option>
-                    {services.map((s, i) => (
-                      <option key={i} value={s}>{s}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                    placeholder="Tell us about your project or requirements..."
-                  />
-                </div>
-                <button type="submit" className="w-full flex items-center justify-center bg-[#A87C1F] hover:bg-[#A87C1F] text-white font-semibold px-6 py-3 rounded-lg transition-all">
-                  <Send className="w-5 h-5 mr-2" /> Send Message
-                </button>
-              </form>
-            )}
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Get in Touch</h2>
-            <div className="space-y-6 mb-12">
-              {contactInfo.map((info, i) => (
-                <div key={i} className="flex items-start space-x-4 bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
-                  <div className="p-3 bg-orange-100 dark:bg-orange-900 rounded-lg">
-                    <info.icon className="w-6 h-6 text-[#A87C1F] dark:text-[#A87C1F]" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{info.title}</h3>
-                    {info.link ? (
-                      <a href={info.link} className="text-sm text-[#A87C1F] dark:text-[#A87C1F] hover:underline block">{info.details}</a>
-                    ) : (
-                      <p className="text-sm text-[#A87C1F] dark:text-[#A87C1F]">{info.details}</p>
-                    )}
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{info.description}</p>
-                  </div>
-                </div>
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                {info.title}
+              </h3>
+              {info.details.map((d, i) => (
+                <p key={i} className="text-gray-600 dark:text-gray-300">{d}</p>
               ))}
             </div>
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <SocialButton href="https://linkedin.com/company/epitome-consulting" icon={<Linkedin />} />
-                <SocialButton href="https://twitter.com/epitomeconsult" icon={<Twitter />} />
-                <SocialButton href="https://epitomeconsulting.com" icon={<Globe />} />
+          ))}
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-600 shadow-lg p-6 text-gray-800 dark:text-gray-200">
+            <ContactForm />
+          </div>
+
+          {/* Social Links & Map */}
+          <div className="lg:col-start-2 space-y-8">
+            <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6">
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                Connect With Us
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Follow us on social media for the latest updates and news about our products and services.
+              </p>
+              <div className="flex space-x-4 mb-6">
+                {socialLinks.map((s, i) => (
+                  <a
+                    key={i}
+                    href={s.href}
+                    className={`text-gray-400 dark:text-gray-500 transition ${s.color}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <s.icon size={24} />
+                  </a>
+                ))}
+              </div>
+
+              {/* Google Map Embed */}
+              <div className="mt-4">
+                <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Our Location</h4>
+                <div className="w-full h-[40rem] rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
+                  <iframe
+                    title="Our Location"
+                    src="https://www.google.com/maps?q=Manga+House,9+Kiambere+Road,Upperhill,Nairobi,Kenya&z=17&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-[#A87C1F] text-white text-center">
+        <div className="max-w-2xl mx-auto px-4">
+          <h3 className="text-4xl font-bold mb-6">
+            Be Ready to Transform Your IT Solutions with Us
+          </h3>
+          <p className="mb-10 text-xl text-red-100 leading-relaxed dark:text-red-200">
+            Join us in creating a better future through technology. Our team is dedicated to providing you with the best solutions tailored to your needs.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link
+              to="/solutions"
+              className="group flex items-center rounded-full border border-white/20 bg-white px-6 py-2 text-[#A87C1F] backdrop-blur-md transition-colors duration-300 hover:border-white hover:bg-gray-100 dark:bg-gray-800 dark:text-[#A87C1F] dark:hover:bg-gray-700"
+            >
+              <span className="mr-2 transform transition-transform duration-300 group-hover:translate-x-1">
+                Solutions We Offer?
+              </span>
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-red-600/30 transition-all duration-300 group-hover:border-red-600 group-hover:rotate-45 dark:border-red-400/30 dark:group-hover:border-red-400">
+                <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -180,54 +183,4 @@ const Contact: React.FC = () => {
   );
 };
 
-type InputFieldProps = {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  label: string;
-  name: string;
-  value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  placeholder?: string;
-  type?: string;
-  required?: boolean;
-};
-
-const InputField: React.FC<InputFieldProps> = ({
-  icon: Icon,
-  label,
-  name,
-  value,
-  onChange,
-  placeholder,
-  type = "text",
-  required = false,
-}) => (
-  <div>
-    <label htmlFor={name} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{label}</label>
-    <div className="relative">
-      <Icon className="absolute left-3 top-3 w-5 h-5 text-gray-400 dark:text-gray-500" />
-      <input
-        type={type}
-        id={name}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-        placeholder={placeholder}
-      />
-    </div>
-  </div>
-);
-
-const SocialButton = ({ href, icon }: { href: string; icon: React.ReactNode }) => (
-  <a
-    href={href}
-    className="p-3 rounded-lg bg-gray-900 text-white hover:bg-gray-700 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {icon}
-  </a>
-);
-
-export default Contact;
+export default ContactPage;

@@ -2,14 +2,10 @@
 import React, { useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import PartnersSection from "@/components/PartnersSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+//import TestimonialsSection from "@/components/TestimonialsSection";
+import CertificationsSection from "@/components/CertificationSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ServicesSection from "@/components/ServicesSection";
-
-// Home component
-// This component serves as the main page of the application
-// It includes various sections like Hero, Why Choose Us, Services, Partners, and Testimonials
-// It also ensures that the page scrolls to the top when it is mounted
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -20,9 +16,10 @@ const Home: React.FC = () => {
     <main> 
       <HeroSection />
       <WhyChooseUsSection />
+      <CertificationsSection />
       <ServicesSection />
       <PartnersSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
     </main>
   );
 };

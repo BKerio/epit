@@ -171,7 +171,7 @@ const ProjectManagement: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               to="/contact"
-              className="group flex items-center rounded-full bg-[#A87C1F] px-6 py-3 text-white shadow-md transition-colors duration-300 hover:bg-red-600"
+              className="group flex items-center rounded-full bg-[#A87C1F] px-6 py-3 text-white shadow-md transition-colors duration-300 hover:bg-[#A87C1F] hover:shadow-lg"
             >
               <span className="mr-4 transform transition-transform duration-300 group-hover:translate-x-1">
                 Talk To A Project Advisor
@@ -183,7 +183,7 @@ const ProjectManagement: React.FC = () => {
 
             <Link
               to="/solutions"
-              className="group flex items-center rounded-full bg-[#A87C1F] px-6 py-3 text-white shadow-md transition-colors duration-300 hover:bg-red-600"
+              className="group flex items-center rounded-full bg-[#A87C1F] px-6 py-3 text-white shadow-md transition-colors duration-300 hover:bg-[#A87C1F] hover:shadow-lg"
             >
               <span className="mr-4 transform transition-transform duration-300 group-hover:translate-x-1">
                 Explore Related Solutions

@@ -1,17 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Home,
-  Info,
-  BookOpen,
-  PhoneCall,
-  MapPin,
-  Mail,
-  Settings,
-  AwardIcon,
-} from "lucide-react";
+import {  Facebook,  Twitter,  Linkedin,  Home,  Info,  BookOpen,  PhoneCall,  MapPin,  Mail,  Settings } from "lucide-react";
 import { getCurrentYear } from "@/lib/utils";
 import { services } from "@/data";
 
@@ -39,7 +27,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
               >
-                <Twitter className="h-6 w-6" />
+                <Twitter className="h-8 w-8" />
               </a>
               <a
                 href="https://facebook.com"
@@ -47,15 +35,15 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
               >
-                <Facebook className="h-6 w-6" />
+                <Facebook className="h-8 w-8" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="•	https://www.linkedin.com/company/101302217/admin/dashboard/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-700 transition-colors"
               >
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-8 w-8" />
               </a>
             </div>
           </div>
@@ -70,7 +58,7 @@ const Footer: React.FC = () => {
                 </h3>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <Home className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <Home className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <Link
                       to="/"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
@@ -79,7 +67,7 @@ const Footer: React.FC = () => {
                     </Link>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Info className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <Info className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <Link
                       to="/about"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
@@ -88,7 +76,7 @@ const Footer: React.FC = () => {
                     </Link>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Settings className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <Settings className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <Link
                       to="/solutions"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
@@ -97,25 +85,7 @@ const Footer: React.FC = () => {
                     </Link>
                   </li>
                   <li className="flex items-center gap-2">
-                    <BookOpen className="h-4 w-4 text-gray-600 dark:text-gray-300" />
-                    <Link
-                      to="/projects"
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
-                    >
-                      Impacts
-                    </Link>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <AwardIcon className="h-4 w-4 text-gray-600 dark:text-gray-300" />
-                    <Link
-                      to="/isoCertification"
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
-                    >
-                      Resources
-                    </Link>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <PhoneCall className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <PhoneCall className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <Link
                       to="/contact"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
@@ -136,10 +106,10 @@ const Footer: React.FC = () => {
                     const Icon = service.icon;
                     return (
                       <li key={service.title} className="flex items-center gap-3">
-                        <Icon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
+                        <Icon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                         <Link
                           to={service.path}
-                          className="text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors text-lg font-semibold"
+                          className="text-gray-600 dark:text-gray-300 hover:text-[#A87C1F] transition-colors text-lg font-semibold"
                         >
                           {service.title}
                         </Link>
@@ -156,22 +126,22 @@ const Footer: React.FC = () => {
                 </h3>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <MapPin className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <span className="text-gray-600 dark:text-gray-300 font-semibold">
                       Nairobi, Kenya
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <Mail className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <a
-                      href="mailto:info@epitomeconsulting.com"
+                      href="mailto:info@epitomeconsulting.co.ke"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
                     >
-                      info@epitomeconsulting.com
+                      info@epitomeconsulting.co.ke
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
-                    <PhoneCall className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <PhoneCall className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <a
                       href="tel:+254725384554"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
@@ -180,7 +150,7 @@ const Footer: React.FC = () => {
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
-                    <PhoneCall className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                    <PhoneCall className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <a
                       href="tel:+254792187994"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
@@ -196,7 +166,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-300 dark:border-gray-700 mt-12 pt-8">
-          <p className="text-center text-gray-600 dark:text-gray-300 text-lg">
+          <p className="text-center text-gray-600 dark:text-gray-300 text-lg font-semibold">
             © {currentYear} Epitome Consulting. All rights reserved.
           </p>
         </div>

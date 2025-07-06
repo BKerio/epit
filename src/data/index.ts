@@ -1,5 +1,31 @@
 // src/data/index.ts
-import { Code, BarChart3, Users, HeartPulse, Brain, ShieldCheck } from "lucide-react";
+import { Code, BarChart3, Users } from "lucide-react";
+
+
+// Local partner logos
+import AFOSI from "@/assets/partners/afosi.png";
+import EPTF from "@/assets/partners/eptf.png";
+import GOODKENYA from "@/assets/partners/goodkenya.png";
+import USAID from "@/assets/partners/usaid.png";
+import RIDA from "@/assets/partners/rida.png";
+import TEENSEED from "@/assets/partners/teenseed.png";
+import WFD from "@/assets/partners/wfd.png";
+import HIJABI from "@/assets/partners/hijabi.png";
+import MAKEMESMILE from "@/assets/partners/makemesmile.png";
+
+
+export const PartnersList = [
+  { id: 1, name: "AFOSI", logo: AFOSI },
+  { id: 2, name: "EPTF", logo: EPTF },
+  { id: 3, name: "GOODKENYA", logo: GOODKENYA },
+  { id: 4, name: "USAID", logo: USAID },
+  { id: 5, name: "RIDA", logo: RIDA },
+  { id: 6, name: "TEENSEED", logo: TEENSEED },
+  { id: 7, name: "WFD", logo: WFD },
+  { id: 8, name: "HIJABI", logo: HIJABI },
+  { id: 9, name: "MAKEMESMILE", logo: MAKEMESMILE },
+
+];
 
 
 export const testimonials = [
@@ -38,84 +64,20 @@ export const testimonials = [
       "With Epitome's support, we developed robust governance policies and accountability structures. Their clarity, legal awareness, and inclusive facilitation style helped build consensus among stakeholders and improved institutional compliance.",
     rating: 5,
   },
-  {
-    id: 6,
-    name: "Women in Leadership Network",
-    message:
-      "Epitome’s gender mainstreaming training and GBV prevention strategy were transformative. Their thoughtful, rights-based approach created safe, inclusive dialogues and strengthened our internal capacity to champion gender equity in practice.",
-    rating: 5,
-  },
-  {
-    id: 7,
-    name: "Kenya Innovation Hub",
-    message:
-      "The organizational development support from Epitome helped us refine our business model and drive culture transformation. Their practical frameworks and hands-on coaching have positioned us for sustainable growth and greater market relevance.",
-    rating: 5,
-  },
-  {
-    id: 8,
-    name: "Global Fund Local Agents",
-    message:
-      "Epitome’s rigorous data quality assessments and evaluation processes provided credible insights that shaped key funding decisions. Their analytical clarity and collaborative style made complex reporting accessible and actionable.",
-    rating: 5,
-  },
-  {
-    id: 9,
-    name: "Federation of Disabled Persons Organizations",
-    message:
-      "Their disability inclusion program helped us mainstream accessibility across all operations. Epitome’s policy advisory, staff training, and inclusive design expertise set a new standard for how we approach diversity and belonging.",
-    rating: 5,
-  },
-  {
-    id: 10,
-    name: "Leadership Circle Africa",
-    message:
-      "Our leadership team benefitted immensely from Epitome’s tailored coaching and governance capacity building. Their tools—including 360° feedback and performance scorecards—enhanced strategic oversight and elevated our leadership effectiveness.",
-    rating: 5,
-  },
+
 ];
-
-
-export const partnersList = [
-  { name: "Global Development Bank" },
-  { name: "National Health Foundation" },
-  { name: "International Education Council" },
-  { name: "Pioneer Tech Corporation" },
-  { name: "United Manufacturing Group" },
-  { name: "Ministry of Innovation and Technology" },
-  { name: "Sustainable Energy Alliance" },
-  { name: "World Infrastructure Fund" },
-  { name: "Healthcare Access Initiative" },
-  { name: "Department of Digital Affairs" },
-  { name: "Clean Water Foundation" },
-  { name: "Economic Empowerment Council" },
-  { name: "Smart Cities Consortium" },
-  { name: "Ministry of Public Services" },
-  { name: "Agricultural Innovation Agency" },
-  { name: "Educational Resources Network" },
-  { name: "National Cybersecurity Office" },
-  { name: "Green Development Authority" },
-  { name: "Technology Transfer Board" },
-  { name: "Public Health Research Trust" },
-  { name: "Urban Housing Commission" },
-  { name: "Women in Tech Alliance" },
-  { name: "Food Security Council" },
-  { name: "Youth Empowerment Ministry" },
-  { name: "Digital Transformation Agency" }
-];
-
-
 
 
 
 
 export const services = [
+  
   {
     title: "Project Management",
     subtitle: "Delivering Clarity, Structure & Results",
     icon: Code,
-    path: "/project-management",
-    image: "https://img.freepik.com/free-photo/business-people-planning-project_53876-14689.jpg?w=996",
+    path: "/projectmanagement",
+    image: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg", // African business meeting
     description:
       "We bring structure, governance, and execution excellence to every stage of the project life cycle—ensuring alignment with goals, value for investment, and sustainable impact.",
     highlights: [
@@ -131,7 +93,7 @@ export const services = [
     subtitle: "From Data to Impact",
     icon: BarChart3,
     path: "/merl",
-    image: "https://img.freepik.com/free-photo/statistics-research-data-analysis-report-concept_53876-123885.jpg?w=996",
+    image: "https://img.freepik.com/free-photo/group-afro-americans-working-together_1303-8983.jpg?semt=ais_hybrid&w=740", 
     description:
       "We help organizations design and implement MERL systems that generate actionable insights, promote adaptive learning, and meet donor and internal accountability standards.",
     highlights: [
@@ -146,8 +108,8 @@ export const services = [
     title: "Organizational Development",
     subtitle: "Resilient, Agile & Future-Ready",
     icon: Users,
-    path: "/organizational-development",
-    image: "https://img.freepik.com/free-photo/business-people-meeting_53876-14842.jpg?w=996",
+    path: "/organizationaldevelopment",
+    image: "https://www.servereworldsystem.com/include/blog/2755/275503283901.jpeg.webp", 
     description:
       "We support institutions to build robust strategies, enhance leadership capacity, and foster governance systems that accelerate transformation and growth.",
     highlights: [
@@ -158,55 +120,8 @@ export const services = [
       "Stakeholder engagement and communication strategies",
     ],
   },
-  {
-    title: "Wellness & Inclusion Programs",
-    subtitle: "Creating Healthy, Equitable Workplaces",
-    icon: HeartPulse,
-    path: "/wellness-inclusion",
-    image: "https://img.freepik.com/premium-photo/mental-health-support-concept-generative-ai_31965-105456.jpg?w=996",
-    description:
-      "We design and implement inclusive workplace programs that promote mental wellness, gender equity, and disability access in line with global best practices.",
-    highlights: [
-      "Gender mainstreaming and GBV prevention",
-      "HIV/STI integration in workplace programs",
-      "Mental health and well-being initiatives",
-      "Disability audits, training, and inclusive policies",
-      "Holistic wellness planning and implementation",
-    ],
-  },
-  {
-    title: "Employee Engagement & Productivity",
-    subtitle: "Unlocking Human Potential",
-    icon: Brain,
-    path: "/employee-engagement",
-    image: "https://img.freepik.com/free-photo/office-life-happy-black-businesswoman-using-laptop-work_74855-20043.jpg?w=996",
-    description:
-      "We foster high-performance teams through evidence-based engagement strategies, mentorship systems, and productivity-enhancing tools tailored to your people and processes.",
-    highlights: [
-      "Team building and staff cohesion programs",
-      "Mentorship and coaching frameworks",
-      "Workflow and performance optimization",
-      "Personal branding and career development",
-      "Staff feedback, engagement, and satisfaction tools",
-    ],
-  },
-  {
-    title: "Policy, Governance & Fundraising",
-    subtitle: "Strengthening Systems for Sustainable Growth",
-    icon: ShieldCheck,
-    path: "/governance-policy",
-    image: "https://img.freepik.com/free-photo/close-up-hand-putting-wood-cube-blocks-with-financial-icon_1150-11381.jpg?w=996",
-    description:
-      "We equip organizations with the tools, policies, and governance mechanisms needed to mobilize resources, ensure compliance, and achieve long-term impact.",
-    highlights: [
-      "Governance frameworks and board evaluations",
-      "Fundraising strategy and proposal development",
-      "Policy drafting and regulatory alignment",
-      "Board training and capacity building",
-      "Stakeholder accountability and performance review",
-    ],
-  },
 ];
+
 
 export interface ProjectResult {
   value: number; 
@@ -451,26 +366,25 @@ export const heroSlides = [
     id: 1,
     title: "Your Strategic Partner in Institutional Transformation",
     subtitle: "We deliver tailored, evidence-based solutions in Project Management, MERL, and Organizational Development to enhance performance and foster sustainable growth.",
-    image: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=1740", 
+    image: "https://www.shutterstock.com/image-photo/team-young-african-people-office-600nw-1922089445.jpg", 
   },
   {
     id: 2,
     title: "Advanced Methodologies for Enduring Impact",
     subtitle: "Leveraging Systems Thinking, Participatory Learning, and AI-Powered Insights to solve complex challenges with precision and clarity.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1740", 
+    image: "https://img.freepik.com/free-photo/african-professional-using-tablet_1303-8984.jpg?semt=ais_hybrid&w=740",
   },
   {
     id: 3,
     title: "Guided by Excellence, Driven by Innovation",
     subtitle: "Our commitment to client-focused collaboration and inclusion ensures we deliver solutions that are not just effective, but equitable and transformative.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1740", 
+    image: "https://img.freepik.com/premium-photo/team-young-african-people-office-table-with-laptop_219728-4569.jpg", 
     overrideLink2: {
       text: "Discover Our Principles",
-      to: "/about", 
+      to: "/about",
     },
   },
 ];
-
 export const cardHoverVariant = {
   rest: {
     y: 0,

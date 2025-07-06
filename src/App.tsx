@@ -7,15 +7,9 @@ import ContactButton from "@/models/contact-button";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Methodology from "@/pages/methodology";
-import TeamStructure from "@/pages/teamstructure";
+import Certifications from "@/pages/certification";
 import Solutions from "@/pages/solutions";
-import Projects from "@/pages/projects";
-import Contact from "@/pages/contact";
-
-{/** Case Study */}
-import KPACaseStudy from "@/casestudies/casestudy1";
-import SRCCaseStudy from "@/casestudies/casestudy2";
-import InfraCaseStudy from "@/casestudies/casestudy3";
+import ContactPage from "@/pages/contact";
 
 {/** solutions*/}
 import ProjectManagement from "@/solutions/projectmanagement";
@@ -39,18 +33,12 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/methodology" element={<Methodology />} />
-              <Route path="/teamstructure" element={<TeamStructure />} />
+              <Route path="/certification" element={<Certifications />} />
               <Route path="/solutions" element={<Solutions />} />
-              <Route path="/projects" element={<Projects />} />
              
               {/**path for contact */}
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<ContactPage />} />
 
-
-              {/**path for case studies */}
-              <Route path="/casestudy1" element={<KPACaseStudy />} />
-              <Route path="/casestudy2" element={<SRCCaseStudy />} />
-              <Route path="/casestudy3" element={<InfraCaseStudy />} />
               {/**path for solutions */}
               <Route path="/Projectmanagement" element={<ProjectManagement />} />
               <Route path="/merl" element={<MERL />} />
