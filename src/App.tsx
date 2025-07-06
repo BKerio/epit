@@ -21,7 +21,7 @@ import PolicyGovernanceFundraising from "@/solutions/policygovernance";
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="system">
+    <ThemeProvider defaultTheme="light">
       <Router>
         <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
           <Navbar />

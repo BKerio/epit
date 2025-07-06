@@ -1,6 +1,6 @@
 // src/pages/ContactPage.tsx
 import { useEffect } from "react";
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, ArrowDownRight } from 'lucide-react';
+import { MapPin, Phone, Facebook, Twitter, Linkedin, ArrowDownRight } from 'lucide-react';
 import Image5 from '@/assets/image-2.png';
 import { Link } from "react-router-dom";
 import ContactForm from '@/models/contact-form';
