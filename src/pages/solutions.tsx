@@ -20,7 +20,8 @@ const Solutions: React.FC = () => {
           <div className="relative inline-flex items-center rounded-full px-2 py-1 border border-white/20 bg-black/50 shadow-md backdrop-blur-sm">
             <span className="absolute inset-0 rounded-full border border-white/10 blur-sm opacity-40 pointer-events-none" />
             <span className="relative inline-block bg-white text-[#A87C1F] font-semibold px-8 py-3 rounded-full text-lg shadow-inner">
-          Our Solutions
+          Our Areas of Expertise
+            <ArrowDownRight className="h-6 w-6 inline-block ml-2" />
             </span>
           </div>
         </h2>
