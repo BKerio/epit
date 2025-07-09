@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <span className="text-xl font-extrabold text-gray-900 dark:text-white">
+              <span className="text-xl font-extrabold text-[#A87C1F] dark:text-[#A87C1F]">
                 Epitome Consulting
               </span>
             </div>
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://x.com"
+                href="https://x.com/EpitomeTh49081"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 <Twitter className="h-8 w-8" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://web.facebook.com/profile.php?id=61577900173299"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"

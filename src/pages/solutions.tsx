@@ -115,7 +115,7 @@ const Solutions: React.FC = () => {
          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-xl">
            <div className="text-center max-w-3xl mx-auto">
              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-               Ready to Work With Millenium Solutions?
+               Ready to Work With Epitome Consulting?
              </h2>
              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                Let's discuss how our team can help you achieve your technology goals and drive business growth.

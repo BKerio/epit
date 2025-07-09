@@ -50,8 +50,8 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: '#', color: 'hover:text-emerald-500 dark:hover:text-emerald-400' },
-  { icon: Twitter, href: '#', color: 'hover:text-blue-400 dark:hover:text-blue-300' },
+  { icon: Facebook, href: 'https://web.facebook.com/profile.php?id=61577900173299', color: 'hover:text-emerald-500 dark:hover:text-emerald-400' },
+  { icon: Twitter, href: 'https://x.com/EpitomeTh49081', color: 'hover:text-blue-400 dark:hover:text-blue-300' },
   { icon: Linkedin, href: 'https://www.linkedin.com/company/101302217/admin/dashboard/', color: 'hover:text-blue-700 dark:hover:text-blue-500' },
 ];
 
@@ -154,31 +154,7 @@ const ContactPage: React.FC = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#A87C1F] text-white text-center">
-        <div className="max-w-2xl mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-6">
-            Be Ready to Transform Your IT Solutions with Us
-          </h3>
-          <p className="mb-10 text-xl text-red-100 leading-relaxed dark:text-red-200">
-            Join us in creating a better future through technology. Our team is dedicated to providing you with the best solutions tailored to your needs.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              to="/solutions"
-              className="group flex items-center rounded-full border border-white/20 bg-white px-6 py-2 text-[#A87C1F] backdrop-blur-md transition-colors duration-300 hover:border-white hover:bg-gray-100 dark:bg-gray-800 dark:text-[#A87C1F] dark:hover:bg-gray-700"
-            >
-              <span className="mr-2 transform transition-transform duration-300 group-hover:translate-x-1">
-                Solutions We Offer?
-              </span>
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-red-600/30 transition-all duration-300 group-hover:border-red-600 group-hover:rotate-45 dark:border-red-400/30 dark:group-hover:border-red-400">
-                <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

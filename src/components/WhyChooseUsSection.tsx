@@ -136,7 +136,7 @@ const WhyChooseUsSection: React.FC = () => {
                     <div
                       className={`p-3 rounded-md transition-colors duration-300 ${
                         isActive
-                          ? "bg-amber-800 text-white"
+                          ? "bg-[#A87C1F] text-white"
                           : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
                       }`}
                     >
@@ -169,7 +169,7 @@ const WhyChooseUsSection: React.FC = () => {
                     <ul className="space-y-4 flex-grow">
                       {activeTabData.details.map((detail) => (
                         <li key={detail.title} className="text-justify">
-                          <strong className="block text-amber-600 dark:text-amber-400">{detail.title}</strong>
+                          <strong className="block text-[#A87C1F] dark:text-[#A87C1F]">{detail.title}</strong>
                           <p className="text-gray-600 dark:text-gray-400">{detail.desc}</p>
                         </li>
                       ))}

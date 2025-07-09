@@ -1,31 +1,42 @@
 import React from "react";
 import { BadgeCheck } from "lucide-react";
 
+// Importing logos
+import NitaLogo from "@/assets/nita.png";
+import PmiLogo from "@/assets/pmi.png";
+import IhrmLogo from "@/assets/ihrm.png";
+import CpdLogo from "@/assets/cpd.png";
+
 const certifications = [
   {
     title: "National Industrial Training Authority (NITA) – Kenya",
     description:
       "Accredited by NITA, Epitome ensures that our training programs meet Kenya’s national standards, equipping clients with industry-relevant skills and impactful learning experiences.",
+    logo: NitaLogo,
   },
   {
     title: "Project Management Institute (PMI)",
     description:
       "Our consultants are certified members of PMI, aligning our project delivery frameworks with globally recognized methodologies for efficient, effective, and measurable outcomes.",
+    logo: PmiLogo,
   },
   {
     title: "Institute of Human Resource Management (IHRM) – Kenya",
     description:
       "As members of IHRM, we adhere to ethical HR practices and deliver innovative workforce solutions aligned with statutory and organizational growth objectives.",
+    logo: IhrmLogo,
   },
   {
     title: "Continuing Professional Development (CPD) Certification Service",
     description:
       "Our affiliation with CPD ensures all our training and learning initiatives meet global standards for continuous professional development, driving lifelong learning and excellence.",
+    logo: CpdLogo,
   },
   {
     title: "Additional Certifications & Affiliations",
     description:
       "• Chartered Institute of Personnel and Development (CIPD)\n• International Association for Six Sigma Certification (IASSC)\n• Association for Talent Development (ATD)",
+    logo: null,
   },
 ];
 
@@ -57,12 +68,33 @@ const CertificationsSection: React.FC = () => {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700"
+              className={`bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700
+              ${!cert.logo ? "md:col-span-2 flex flex-col items-center text-center" : "flex flex-col"}`}
             >
+              {/* Logo */}
+              {cert.logo && (
+                <div className="mb-6 flex justify-center w-full">
+                  <div className="w-36 h-36 flex items-center justify-center rounded-full bg-white shadow-inner border border-gray-300 dark:border-gray-700">
+                    <img
+                      src={cert.logo}
+                      alt={`${cert.title} Logo`}
+                      className="w-28 h-28 object-contain rounded-full"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {/* Title */}
               <h3 className="text-xl font-bold text-amber-700 dark:text-amber-400 mb-2">
                 {cert.title}
               </h3>
-              <p className="whitespace-pre-line text-gray-600 dark:text-gray-300 text-justify">
+
+              {/* Description */}
+              <p
+                className={`whitespace-pre-line text-gray-600 dark:text-gray-300 ${
+                  !cert.logo ? "text-center" : "text-justify"
+                }`}
+              >
                 {cert.description}
               </p>
             </div>
