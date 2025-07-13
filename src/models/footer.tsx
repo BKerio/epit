@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
               {/* Our Solutions */}
               <div className="flex-1 mt-8 md:mt-0">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                  Our Solutions
+                  Our Areas of Expertise
                 </h3>
                 <ul className="space-y-2">
                   {services.map((service) => {

@@ -55,7 +55,7 @@ const CertificationsSection: React.FC = () => {
               </div>
             </div>
           </h2>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-2xl font-semibold text-gray-900 dark:text-white">
             Professional Certifications & Affiliations
           </h2>
           <p className="mt-4 text-xl text-justify max-w-4xl mx-auto text-gray-600 dark:text-gray-400">

@@ -15,10 +15,6 @@ import ContactPage from "@/pages/contact";
 import ProjectManagement from "@/solutions/projectmanagement";
 import MERL from "@/solutions/merl";
 import OrganizationalDevelopment from "@/solutions/organizationaldevelopment";
-import WellnessInclusion from "@/solutions/wellnessinclusion";
-import EmployeeEngagement from "@/solutions/employee-engagement";
-import PolicyGovernanceFundraising from "@/solutions/policygovernance";
-
 function App() {
   return (
     <ThemeProvider defaultTheme="light">
@@ -43,10 +39,6 @@ function App() {
               <Route path="/Projectmanagement" element={<ProjectManagement />} />
               <Route path="/merl" element={<MERL />} />
               <Route path="/organizationaldevelopment" element={<OrganizationalDevelopment />} />
-              <Route path="/wellnessinclusion" element={<WellnessInclusion />} />
-              <Route path="/employee-engagement" element={<EmployeeEngagement />} />
-              <Route path="/policy-governance-fundraising" element={<PolicyGovernanceFundraising />} />
-
               
             </Routes>
           </main>

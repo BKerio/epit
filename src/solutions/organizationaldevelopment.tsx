@@ -1,60 +1,64 @@
-// src/pages/OrganizationalDevelopment.tsx
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import {
-  ShieldCheck,
-  BookOpen,
-  ArrowDownRight,
-  Users,
-  Target,
   Building2,
-  BrainCircuit,
-  Scale,
+  BarChart3,
+  UserCog2,
+  Users,
+  HeartHandshake,
+  Handshake,
+  Smile,
 } from "lucide-react";
 
-const orgDevServices = [
+const sections = [
   {
-    title: "Strategic Planning & Alignment",
-    description:
-      "Epitome Consulting guides organizations in crafting strategic roadmaps aligned with market realities and institutional missions.",
-    icon: Target,
-    color: "text-indigo-600",
+    title: "🔹 Strategic Planning and Implementation",
+    icon: <BarChart3 className="inline-block w-6 h-6 mr-2 text-[#A87C1F]" />,
+    content:
+      "Epitome helps define long-term goals and build strategic roadmaps aligned with organizational values, challenges, and market needs. Execution plans break down goals into actionable initiatives with specific timelines and resource allocation.",
   },
   {
-    title: "Governance & Policy Development",
-    description:
-      "We help strengthen governance structures, board performance, and compliance through tailored policies and frameworks.",
-    icon: Scale,
-    color: "text-green-600",
+    title: "🔹 Organizational Capacity Assessment",
+    icon: <Building2 className="inline-block w-6 h-6 mr-2 text-[#A87C1F]" />,
+    content:
+      "They assess systems, structures, human capital, and performance frameworks using SMART KPIs and KPAs to evaluate and improve institutional effectiveness.",
   },
   {
-    title: "Leadership Development & Coaching",
-    description:
-      "Epitome empowers leaders with coaching, assessments, and competency frameworks to drive culture and results.",
-    icon: Users,
-    color: "text-blue-600",
+    title: "🔹 Business Model Development and Review",
+    icon: <UserCog2 className="inline-block w-6 h-6 mr-2 text-[#A87C1F]" />,
+    content:
+      "Epitome guides organizations in refining or developing business models based on evolving markets and customer needs, ensuring sustainability and competitiveness.",
   },
   {
-    title: "Change Management & Culture",
-    description:
-      "We support organizations to manage transformation, restructure effectively, and foster positive internal culture.",
-    icon: BrainCircuit,
-    color: "text-orange-600",
+    title: "🔹 Change Management and Culture Transformation",
+    icon: <Users className="inline-block w-6 h-6 mr-2 text-[#A87C1F]" />,
+    content:
+      "They support organizations through change—such as restructuring or digital shifts—by aligning systems and engaging staff to achieve transformation goals. Culture transformation ensures harmony between values, operations, and strategic goals.",
   },
-  {
-    title: "Stakeholder Engagement",
-    description:
-      "Epitome develops communication strategies and tools to build trust, participation, and visibility among key stakeholders.",
-    icon: BookOpen,
-    color: "text-red-600",
-  },
-  {
-    title: "Organizational Diagnostics",
-    description:
-      "We conduct assessments to identify strengths, gaps, and priorities—helping clients optimize for performance and growth.",
-    icon: ShieldCheck,
-    color: "text-purple-600",
-  },
+];
+
+const governanceItems = [
+  { label: "Governance Framework Development", desc: "Designing constitutions, charters, and bylaws for sound decision-making and accountability." },
+  { label: "Policy Development and Review", desc: "Ensuring organizational policies meet legal and ethical standards." },
+  { label: "Fundraising Strategy", desc: "Creating donor-aligned proposals and branding to secure funding." },
+  { label: "Leadership Development & Coaching", desc: "Competency frameworks, 360-degree feedback, and personalized coaching to build leadership." },
+  { label: "Governance Capacity Building", desc: "Board training, onboarding, and succession planning." },
+  { label: "Board Performance Monitoring", desc: "Scorecards and annual evaluations to improve governance." },
+  { label: "Stakeholder Engagement", desc: "Strategies and tools for internal/external stakeholder communication and alignment." },
+];
+
+const wellnessItems = [
+  { label: "Gender Mainstreaming & GBV Response", desc: "Integrating gender perspectives and building capacity to prevent/respond to gender-based violence." },
+  { label: "HIV & STI Workplace Program", desc: "A holistic, integrated health approach aligned with behavioral, biomedical, and structural components." },
+  { label: "Workplace Mental Health", desc: "Focusing on emotional and psychological well-being, including stress management and work-life balance." },
+  { label: "Disability Inclusion", desc: "Providing training and assessment tools for mainstreaming disability in organizational settings." },
+];
+
+const engagementItems = [
+  { label: "Team Building", desc: "Structured exercises to foster communication and collaboration." },
+  { label: "Coaching & Mentorship", desc: "Creating internal and external support frameworks for professional growth." },
+  { label: "Productivity Management", desc: "Identifying bottlenecks and applying continuous improvement strategies." },
+  { label: "Personal Branding", desc: "Empowering individuals to manage their professional identity and career narrative." },
+  { label: "Employee Engagement Assessments", desc: "Evaluating performance and organizational alignment from both technical and soft-skill perspectives." },
 ];
 
 const OrganizationalDevelopment: React.FC = () => {
@@ -62,154 +66,65 @@ const OrganizationalDevelopment: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const renderSectionBadge = (text: string) => (
-    <div className="relative inline-flex items-center rounded-full p-1 border border-white/30 bg-white/10 shadow-lg backdrop-blur-md dark:border-gray-700/30 dark:bg-gray-700/10 dark:shadow-xl dark:backdrop-blur-md">
-      <span className="absolute inset-0 rounded-full border border-white/20 blur-sm opacity-60 pointer-events-none animate-pulse-slow dark:border-gray-700/20" />
-      <span className="relative inline-block bg-[#A87C1F] text-white font-bold px-6 py-2 rounded-full text-lg shadow-inner hover:from-orange-600 hover:to-red-700 transition-all duration-300">
-        {text}
-      </span>
-    </div>
+  const renderList = (items: { label: string; desc: string }[]) => (
+    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
+      {items.map((item, idx) => (
+        <li key={idx}>
+          <strong className="text-gray-700 dark:text-gray-200">{item.label}:</strong> {item.desc}
+        </li>
+      ))}
+    </ul>
   );
 
   return (
-    <div className="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans">
-      <section className="pt-24 pb-16 bg-blue-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-4xl mx-auto mt-10">
-            <h1 className="flex items-center justify-center text-xl md:text-2xl lg:text-3xl font-bold mb-6 drop-shadow">
-              {renderSectionBadge("Organizational Development")}
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 drop-shadow-sm">
-              Building Resilient, Future-Ready Institutions
-            </p>
-            <p className="mt-4 text-lg text-blue-200 drop-shadow-sm max-w-2xl mx-auto">
-              Epitome Consulting empowers organizations to strengthen leadership, enhance governance, and build adaptive systems for sustainable performance.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="bg-white dark:bg-gray-900 min-h-screen transition duration-300">
+      {/* Header Section */}
+      <div className="bg-[#A87C1F] text-white py-10 px-6 text-center shadow-lg">
+        <h1 className="text-2xl font-bold mb-2">Organizational Development</h1>
+        <p className="text-lg max-w-2xl mx-auto">
+          Driving transformation through leadership, governance, inclusion, and strategy.
+        </p>                           
+      </div>
 
-      <section className="py-20 bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="flex items-center justify-center mb-12">
-            {renderSectionBadge("Our Focus Areas")}
+      <div className="p-6 max-w-5xl mx-auto space-y-10">
+        {/* Core Sections */}
+        {sections.map((section, idx) => (
+          <div
+            key={idx}
+            className="bg-white dark:bg-gray-800 border border-[#A87C1F] dark:border-gray-700 shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300"
+          >
+            <h2 className="text-2xl font-semibold text-[#A87C1F] border-[#A87C1F] dark:text-[#FCD36D] mb-2">
+              {section.icon}
+              {section.title.replace("🔹 ", "")}
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{section.content}</p>
+          </div>
+        ))}
+
+        {/* Leadership and Governance */}
+        <div className="bg-white dark:bg-gray-800 border border-[#A87C1F] dark:border-gray-700 shadow-lg rounded-2xl p-6">
+          <h2 className="text-2xl font-semibold text-[#A87C1F] flex items-center gap-2 mb-2">
+            <Handshake className="w-6 h-6" /> Leadership and Governance
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div>
-              <h3 className="text-3xl font-semibold mb-4 text-blue-700 dark:text-blue-400">
-                Align & Lead
-              </h3>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                Strategy and leadership go hand-in-hand. We help align vision with execution.
-              </p>
-              <ul className="space-y-6 text-lg text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <Target className="w-7 h-7 text-indigo-600 flex-shrink-0 mr-4 mt-0.5" />
-                  <div><strong>Strategic Roadmaps:</strong> Define goals, KPIs, and growth pathways.</div>
-                </li>
-                <li className="flex items-start">
-                  <Users className="w-7 h-7 text-blue-600 flex-shrink-0 mr-4 mt-0.5" />
-                  <div><strong>Leadership Coaching:</strong> Strengthen people capabilities and accountability.</div>
-                </li>
-                <li className="flex items-start">
-                  <Building2 className="w-7 h-7 text-gray-600 flex-shrink-0 mr-4 mt-0.5" />
-                  <div><strong>Structural Reviews:</strong> Reshape teams, roles, and governance.</div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-3xl font-semibold mb-4 text-indigo-700 dark:text-indigo-400">
-                Strengthen & Evolve
-              </h3>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                Transformation demands tools, feedback, and a culture of continuous improvement.
-              </p>
-              <ul className="space-y-6 text-lg text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <Scale className="w-7 h-7 text-green-600 flex-shrink-0 mr-4 mt-0.5" />
-                  <div><strong>Governance Standards:</strong> Policy, board, and operational compliance.</div>
-                </li>
-                <li className="flex items-start">
-                  <BookOpen className="w-7 h-7 text-red-600 flex-shrink-0 mr-4 mt-0.5" />
-                  <div><strong>Culture & Values:</strong> Build a strong, inclusive, and accountable work culture.</div>
-                </li>
-                <li className="flex items-start">
-                  <BrainCircuit className="w-7 h-7 text-orange-600 flex-shrink-0 mr-4 mt-0.5" />
-                  <div><strong>Change Enablement:</strong> Navigate transitions with clarity and confidence.</div>
-                </li>
-              </ul>
-            </div>
-          </div>
+          {renderList(governanceItems)}
         </div>
-      </section>
 
-      <section className="py-20 bg-white dark:bg-gray-900" id="orgdev-services">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="flex items-center justify-center mb-12">
-            {renderSectionBadge("Core Services by Epitome Consulting")}
+        {/* Wellness & Inclusion */}
+        <div className="bg-white dark:bg-gray-800 border border-[#A87C1F] dark:border-gray-700 shadow-lg rounded-2xl p-6">
+          <h2 className="text-2xl font-semibold text-[#A87C1F] flex items-center gap-2 mb-2">
+            <HeartHandshake className="w-6 h-6" /> Wellness & Inclusion Programs
           </h2>
-          <p className="mt-4 text-xl text-center text-gray-600 dark:text-gray-300 mb-16 max-w-3xl mx-auto">
-            Epitome Consulting supports institutions to develop resilient strategies, ethical leadership, and inclusive systems that scale impact and improve performance.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {orgDevServices.map((service, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:shadow-2xl"
-              >
-                <div className="flex items-center mb-6">
-                  <service.icon
-                    className={`w-12 h-12 ${service.color} flex-shrink-0`}
-                    strokeWidth={1.5}
-                  />
-                  <h3 className="ml-5 text-2xl font-semibold text-gray-900 dark:text-gray-100">
-                    {service.title}
-                  </h3>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          {renderList(wellnessItems)}
         </div>
-      </section>
 
-      <section className="py-20 bg-blue-500 text-white text-center">
-        <div className="max-w-2xl mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-6">
-            Let’s Evolve Your Organization
-          </h3>
-          <p className="mb-10 text-xl text-blue-100 leading-relaxed">
-            Reach out to Epitome Consulting to discover how we can partner in your organization’s growth and transformation journey.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              to="/contact"
-              className="group flex items-center rounded-full bg-[#A87C1F] px-6 py-3 text-white shadow-md transition-colors duration-300 hover:bg-[#A87C1F] hover:shadow-lg"
-            >
-              <span className="mr-4 transform transition-transform duration-300 group-hover:translate-x-1">
-                Talk To An Advisor
-              </span>
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-white flex-shrink-0 transition-all duration-300 group-hover:rotate-45">
-                <ArrowDownRight className="h-5 w-5 text-white transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" />
-              </span>
-            </Link>
-
-            <Link
-              to="/solutions"
-              className="group flex items-center rounded-full bg-[#A87C1F] px-6 py-3 text-white shadow-md transition-colors duration-300 hover:bg-[#A87C1F] hover:shadow-lg"
-            >
-              <span className="mr-4 transform transition-transform duration-300 group-hover:translate-x-1">
-                Explore Related Services
-              </span>
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-white flex-shrink-0 transition-all duration-300 group-hover:rotate-45">
-                <ArrowDownRight className="h-5 w-5 text-white transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" />
-              </span>
-            </Link>
-          </div>
+        {/* Employee Engagement */}
+        <div className="bg-white dark:bg-gray-800 border border-[#A87C1F] dark:border-gray-700 shadow-lg rounded-2xl p-6">
+          <h2 className="text-2xl font-semibold text-[#A87C1F] flex items-center gap-2 mb-2">
+            <Smile className="w-6 h-6" /> Employee Engagement & Productivity
+          </h2>
+          {renderList(engagementItems)}
         </div>
-      </section>
+      </div>
     </div>
   );
 };

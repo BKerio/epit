@@ -215,7 +215,7 @@ const Navbar = () => {
               <div className="hidden lg:flex items-center space-x-2 lg:space-x-3 h-full">
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative h-full flex items-center" onMouseEnter={() => link.dropdown && handleMouseEnter(link.name)} onMouseLeave={() => link.dropdown && handleMouseLeave()}>
-                    <Link to={link.path} className={`flex items-center px-2 py-2 rounded-md text-sm font-medium transition-colors ${location.pathname.startsWith(link.path) && link.path !== '/' || location.pathname === link.path ? "text-[#A87C1F] dark:text-[#A87C1F]" : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"}`}>
+                    <Link to={link.path} className={`flex items-center px-2 py-2 rounded-md text-sm font-medium transition-colors ${location.pathname.startsWith(link.path) && link.path !== '/' || location.pathname === link.path ? "text-[#A87C1F] dark:text-[#A87C1F]" : "text-gray-700 dark:text-gray-300 hover:text-[#A87C1F] dark:hover:text-[#A87C1F]"}`}>
                       {link.name}
                       {link.dropdown && <ChevronDownCircle className={`ml-1 h-4 w-4 transition-transform duration-200 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
                     </Link>
@@ -225,7 +225,7 @@ const Navbar = () => {
                            {link.dropdown.map((sublink, index) => (
                              <React.Fragment key={sublink.name}>
                                <Link to={sublink.path} onClick={closeAllMenus} className="flex items-center w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-3 flex-shrink-0" />
+                                 <div className="w-1.5 h-1.5 rounded-full bg-[#A87C1F] mr-3 flex-shrink-0" />
                                  <span>{sublink.name}</span>
                                </Link>
                                {index !== link.dropdown.length - 1 && ( <div className="border-t border-gray-200 dark:border-gray-700 my-1 mx-3" /> )}
@@ -277,7 +277,7 @@ const Navbar = () => {
                           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="pl-4 mt-1 space-y-1 overflow-hidden">
                             {link.dropdown.map(sub => (
                                <Link key={sub.name} to={sub.path} onClick={closeAllMenus} className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-400">
-                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-3 flex-shrink-0" />
+                                 <div className="w-1.5 h-1.5 rounded-full bg-[#A87C1F] mr-3 flex-shrink-0" />
                                  <span>{sub.name}</span>
                                </Link>
                             ))}

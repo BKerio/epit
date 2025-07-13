@@ -13,7 +13,7 @@ const Solutions: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-blue-500 text-white">
+      <section className="pt-20 pb-16 bg-[#A87C1F] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
         <h2 className="flex items-center justify-center my-4">
@@ -46,7 +46,7 @@ const Solutions: React.FC = () => {
                   viewport={{ once: true }}
                   className={`order-1 ${index % 2 !== 0 ? 'md:order-2' : ''}`}
                 >
-                  <div className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-2">
+                  <div className="text-sm text-[#A87C1F] dark:text-[#A87C1F] font-medium mb-2">
                     {service.subtitle}
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
@@ -62,7 +62,7 @@ const Solutions: React.FC = () => {
                         <ul className="space-y-4">
                           {service.highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-[#A87C1F] dark:text-[#A87C1F] flex-shrink-0" />
                             <span>{highlight}</span>
                           </li>
                           ))}
@@ -134,18 +134,7 @@ const Solutions: React.FC = () => {
                </span>
              </Link>
       
-               {/* Secondary Button: Explore Solutions */}
-               <Link
-                 to="/solutions"
-                 className="group flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-500 px-6 py-2 text-gray-800 dark:text-gray-300 transition-colors duration-300 hover:border-white hover:text-white hover:bg-gray-800 dark:hover:bg-gray-700"
-               >
-                 <span className="mr-2 transform transition-transform duration-300 group-hover:translate-x-1">
-                   Explore Solutions
-                 </span>
-                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 dark:border-gray-500 transition-all duration-300 group-hover:border-white group-hover:rotate-45">
-                   <ArrowDownRight className="h-4 w-4 text-gray-600 dark:text-gray-400 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-[#A87C1F]" />
-                 </span>
-               </Link>
+             
              </div>
            </div>
          </div>

@@ -78,7 +78,7 @@ const ServicesSection: React.FC = () => {
              to="/solutions"
              className="group inline-flex items-center px-6 py-3 bg-[#A87C1F] text-white font-semibold rounded-full shadow-md hover:bg-[#57441a] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#A87C1F] transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
            >
-             Explore All Services
+             Explore All Areas Of Expertise
              <span
                className="ml-3 inline-flex items-center justify-center w-6 h-6 rounded-full border border-white transition-transform duration-300 ease-in-out group-hover:rotate-45 group-hover:animate-bounce"                   
              >

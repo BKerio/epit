@@ -109,7 +109,7 @@ export const services = [
     subtitle: "Resilient, Agile & Future-Ready",
     icon: Users,
     path: "/organizationaldevelopment",
-    image: "https://www.servereworldsystem.com/include/blog/2755/275503283901.jpeg.webp", 
+    image: "https://img.freepik.com/premium-photo/team-young-african-people-office-table-with-laptops_219728-4506.jpg", 
     description:
       "We support institutions to build robust strategies, enhance leadership capacity, and foster governance systems that accelerate transformation and growth.",
     highlights: [
@@ -366,7 +366,7 @@ export const heroSlides = [
     id: 1,
     title: "Your Strategic Partner in Institutional Transformation",
     subtitle: "We deliver tailored, evidence-based solutions in Project Management, MERL, and Organizational Development to enhance performance and foster sustainable growth.",
-    image: "https://www.shutterstock.com/image-photo/team-young-african-people-office-600nw-1922089445.jpg", 
+    image: "https://www.pace-able.net/wp-content/uploads/Arcadia-1.jpg", 
   },
   {
     id: 2,

@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="max-w-full sm:max-w-4xl mt-4"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-xl">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl font-semibold text-white/100 mb-4 drop-shadow-xl">
             {currentSlideData.title}
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 font-light drop-shadow-lg">

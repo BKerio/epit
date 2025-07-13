@@ -6,7 +6,7 @@ const ContactButton = () => {
 
   // WhatsApp details
   const phoneNumber = "+254725384554";
-  const defaultMessage = "Hello, I'm interested in partnering with Epitome Consulting for your expertise in Project Management, Monitoring, Evaluation, Research & Learning (MERL), Organizational Development, Wellness & Inclusion Programs, and Employee Engagement & Productivity. I'd like to learn more about how your services can support our organizational goals.";
+  const defaultMessage = "Hello, I'm interested in partnering with Epitome Consulting for your expertise in Project Management, Monitoring, Evaluation, Research & Learning (MERL) and Organizational Development. I'd like to learn more about how your services can support our organizational goals.";
 
   
   // Example social media or contact links
@@ -25,25 +25,25 @@ const ContactButton = () => {
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
-      onClick: () => window.open("https://www.linkedin.com/", "_blank"),
+      onClick: () => window.open("https://www.linkedin.com/company/101302217/admin/dashboard/", "_blank"),
       bgColor: "bg-gray-600",
       label: "Linkedin",
     },
     {
       icon: <Twitter className="h-5 w-5" />,
-      onClick: () => window.open("https://x.com/", "_blank"),
+      onClick: () => window.open("https://x.com/EpitomeTh49081", "_blank"),
       bgColor: "bg-blue-400",
       label: "Twitter",
     },
     {
       icon: <Facebook className="h-5 w-5" />,
-      onClick: () => window.open("https://www.facebook.com", "_blank"),
+      onClick: () => window.open("https://web.facebook.com/profile.php?id=61577900173299", "_blank"),
       bgColor: "bg-blue-600",
       label: "Facebook",
     },
     {
       icon: <Mail className="h-5 w-5" />,
-      onClick: () => window.open("mailto:info@epitomeconsulting.com"),
+      onClick: () => window.open("mailto:info@epitomeconsulting.co.ke", "_blank"),
       bgColor: "bg-red-500",
       label: "Email Us",
     },

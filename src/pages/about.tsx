@@ -32,7 +32,7 @@ const About: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+      <section className="pt-24 pb-16 bg-[#A87C1F] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-3xl font-semibold mb-6">
@@ -197,7 +197,7 @@ const About: React.FC = () => {
                   className="group flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-500 px-6 py-2 text-gray-800 dark:text-gray-300 transition-colors duration-300 hover:border-[#A87C1F] hover:text-[#A87C1F]"
                 >
                   <span className="mr-2 transform transition-transform duration-300 group-hover:translate-x-1">
-                    Explore Our Services
+                    Explore Our Areas of Expertise
                   </span>
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 dark:border-gray-500 transition-all duration-300 group-hover:border-[#A87C1F] group-hover:rotate-45">
                     <ArrowDownRight className="h-4 w-4 text-gray-600 dark:text-gray-400 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-[#A87C1F]" />
