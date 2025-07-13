@@ -14,9 +14,8 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const [headerHeight, setHeaderHeight] = useState(0);
 
-  // --- CORRECTED: State management for scroll visibility ---
   const [visible, setVisible] = useState(true);
-  const lastScrollY = useRef(0); // Use useRef to avoid stale state in the event listener
+  const lastScrollY = useRef(0);
 
   const location = useLocation();
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -56,6 +55,7 @@ const Navbar = () => {
     }
   };
 
+  // Effect to update logo based on theme changes
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setCurrentLogoSrc(getInitialLogo());
@@ -67,7 +67,7 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  // --- CORRECTED: Scroll effect for hide/show and shrink ---
+  // Effect for scroll behavior (hide/show and shrink)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -84,14 +84,14 @@ const Navbar = () => {
         }
       }
       
-      setScrolled(currentScrollY > 10);
+      setScrolled(currentScrollY > 10); // Add a subtle shrink/expand effect based on scroll
       lastScrollY.current = currentScrollY; // Update the ref's value
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    handleScroll(); // Call once on mount to set initial state
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isOpen]); // Only depend on isOpen, as the ref doesn't need to be a dependency
+  }, [isOpen]); // Re-run if the mobile menu state changes
 
   // Effect to calculate header height for the spacer
   useEffect(() => {
@@ -106,24 +106,26 @@ const Navbar = () => {
       resizeObserver.observe(headerRef.current);
     }
     return () => resizeObserver.disconnect();
-  }, []);
+  }, []); // Recalculate on mount and resize
 
+  // Effect to handle responsive behavior (detecting mobile/desktop transition)
   useEffect(() => {
     const handleResize = () => {
       const mobileStatus = window.innerWidth < 1024;
       if (isMobile !== mobileStatus) {
         setIsMobile(mobileStatus);
-        closeAllMenus();
+        closeAllMenus(); // Close menus if resizing causes a mode change
       }
     };
     window.addEventListener("resize", handleResize);
-    handleResize();
+    handleResize(); // Call once on mount to set initial state
     return () => window.removeEventListener("resize", handleResize);
-  }, [isMobile]);
+  }, [isMobile]); // Depend on isMobile to only trigger when its value changes
 
+  // Effect to close all menus when navigating to a new page
   useEffect(() => {
     closeAllMenus();
-  }, [location]);
+  }, [location]); // Trigger on route changes
 
   const navLinks = [
    { name: "Home", path: "/" },
@@ -137,32 +139,16 @@ const Navbar = () => {
     ],
   },
 
-  //{ name: "Certifications & Affiliations", path: "/certification" },
+  { name: "Project Management", path: "/projectmanagement" },
+  { name: "Monitoring, Evaluation, Research & Learning (MERL)", path: "/merl" },
+  { name: "Organizational Development", path: "/organizationaldevelopment" },
 
-  {
-    name: "Areas of Expertise",
-    path: "/solutions",
-    dropdown: [
-      {
-        name: "Project Management",
-        path: "/projectmanagement",
-      },
-      {
-        name: "Monitoring, Evaluation, Research & Learning (MERL)",
-        path: "/merl",
-      },
-      {
-        name: "Organizational Development",
-        path: "/organizationaldevelopment",
-      },
-     
-    ],
-  },
   { name: "Contact Us", path: "/contact" },
 ];
   
   return (
     <>
+      {/* Fixed Header */}
       <motion.header
         ref={headerRef}
         className="fixed top-0 left-0 w-full z-50"
@@ -191,19 +177,19 @@ const Navbar = () => {
               <a href="https://x.com/EpitomeTh49081" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter" className="text-[#A87C1F] dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"><Twitter className="h-7 w-7" /></a>
               <a href="https://web.facebook.com/profile.php?id=61577900173299" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="text-[#A87C1F] dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-600 transition-colors"><Facebook className="h-7 w-7" /></a>
               <a href="https://www.linkedin.com/company/101302217/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Linkedin" className="text-[#A87C1F] dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-500 transition-colors"><Linkedin className="h-7 w-7" /></a>
-              {/* Talk to Us Button */}
               <Link to="/contact" className="ml-4 px-4 py-2 bg-[#A87C1F] text-white font-semibold rounded-lg shadow-md hover:bg-amber-700 transition-colors">
                 Talk to Us
               </Link>
           </div>
         </div>
 
-        {/* Floating Navbar Container */}
+        {/* Main Navbar */}
         <div className={`w-full px-4 sm:px-6 lg:px-8 transition-all duration-300 ${scrolled ? 'py-1' : 'py-3'}`}>
             <motion.nav
               layout
               className={`max-w-7xl mx-auto flex justify-between items-center px-6 bg-white dark:bg-gray-900/80 backdrop-blur-lg rounded-xl shadow-lg transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}
             >
+                {/* Logo */}
                 <Link to="/" className="flex items-center h-full" onClick={closeAllMenus}>
                 <img
                   src={currentLogoSrc}
@@ -212,6 +198,8 @@ const Navbar = () => {
                   style={{ height: scrolled ? '110%' : '195%' }}
                 />
                 </Link>
+                
+              {/* Desktop Navigation Links */}
               <div className="hidden lg:flex items-center space-x-2 lg:space-x-3 h-full">
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative h-full flex items-center" onMouseEnter={() => link.dropdown && handleMouseEnter(link.name)} onMouseLeave={() => link.dropdown && handleMouseLeave()}>
@@ -219,6 +207,7 @@ const Navbar = () => {
                       {link.name}
                       {link.dropdown && <ChevronDownCircle className={`ml-1 h-4 w-4 transition-transform duration-200 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
                     </Link>
+                    {/* Dropdown Menu */}
                     <AnimatePresence>
                       {link.dropdown && activeDropdown === link.name && !isMobile && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} transition={{ duration: 0.2 }} className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-20 p-2 space-y-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-xl w-60" onMouseEnter={() => handleMouseEnter(link.name)} onMouseLeave={handleMouseLeave}>
@@ -236,11 +225,13 @@ const Navbar = () => {
                     </AnimatePresence>
                   </div>
                 ))}
+                {/* Theme Toggle */}
                 <div className="pl-2">
                    <ThemeToggle />
                 </div>
               </div>
 
+              {/* Mobile Menu Button */}
               <div className="flex lg:hidden items-center">
                 <button onClick={toggleMenu} className="p-2 rounded-md text-gray-700 dark:text-gray-300 focus:outline-none">
                   {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -268,10 +259,12 @@ const Navbar = () => {
                 <div key={link.name}>
                   {link.dropdown ? (
                     <>
+                      {/* Dropdown Trigger */}
                       <button onClick={() => setActiveDropdown(prev => prev === link.name ? null : link.name)} className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300">
                         <span>{link.name}</span>
                         <ChevronDownCircle className={`h-5 w-5 transform transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
                       </button>
+                      {/* Dropdown Content */}
                       <AnimatePresence>
                         {activeDropdown === link.name && (
                           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="pl-4 mt-1 space-y-1 overflow-hidden">
@@ -285,9 +278,13 @@ const Navbar = () => {
                         )}
                       </AnimatePresence>
                     </>
-                  ) : <Link to={link.path} onClick={closeAllMenus} className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === link.path ? 'text-[#A87C1F] dark:text-[#A87C1F]' : 'text-gray-700 dark:text-gray-300'}`}>{link.name}</Link>}
+                  ) : (
+                    // Regular Link
+                    <Link to={link.path} onClick={closeAllMenus} className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === link.path ? 'text-[#A87C1F] dark:text-[#A87C1F]' : 'text-gray-700 dark:text-gray-300'}`}>{link.name}</Link>
+                  )}
                 </div>
               ))}
+               {/* Theme Toggle in Mobile Menu */}
                <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700 px-3">
                  <div className="flex justify-center pt-2"><ThemeToggle /></div>
                </div>
