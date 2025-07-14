@@ -76,15 +76,6 @@ const Footer: React.FC = () => {
                     </Link>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Settings className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-                    <Link
-                      to="/solutions"
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors font-semibold"
-                    >
-                      Area of Expertise
-                    </Link>
-                  </li>
-                  <li className="flex items-center gap-2">
                     <PhoneCall className="h-6 w-6 text-gray-600 dark:text-gray-300" />
                     <Link
                       to="/contact"
@@ -99,7 +90,7 @@ const Footer: React.FC = () => {
               {/* Our Solutions */}
               <div className="flex-1 mt-8 md:mt-0">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                  Our Areas of Expertise
+                  What We Do
                 </h3>
                 <ul className="space-y-2">
                   {services.map((service) => {
