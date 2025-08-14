@@ -39,10 +39,10 @@ const contactInfo = [
         +254 792 187 994
       </a>,
       <a
-        href="mailto:info@epitomeconsulting.co.ke"
+        href="mailto:info@epitomeconsulting.org"
         className="text-black hover:underline dark:text-white"
       >
-        info@epitomeconsulting.co.ke
+        info@epitomeconsulting.org
       </a>
     ],
     color: 'text-green-500 dark:text-green-400',

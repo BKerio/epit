@@ -43,7 +43,7 @@ const ContactButton = () => {
     },
     {
       icon: <Mail className="h-5 w-5" />,
-      onClick: () => window.open("mailto:info@epitomeconsulting.co.ke", "_blank"),
+      onClick: () => window.open("mailto:info@epitomeconsulting.org", "_blank"),
       bgColor: "bg-red-500",
       label: "Email Us",
     },

@@ -140,7 +140,7 @@ const Navbar = () => {
   },
 
   { name: "Project Management", path: "/projectmanagement" },
-  { name: "Monitoring, Evaluation, Research & Learning (MERL)", path: "/merl" },
+  { name: "Monitoring, Evaluation & Learning", path: "/merl" },
   { name: "Organizational Development", path: "/organizationaldevelopment" },
 
   { name: "Contact Us", path: "/contact" },
@@ -168,9 +168,9 @@ const Navbar = () => {
               <span>+254 792 187 994</span>
             </a>
             <span className="hidden md:block text-black dark:text-gray-600">|</span>
-             <a href="mailto:info@epitomeconsulting.co.ke" className="flex items-center gap-2 text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+             <a href="mailto:info@epitomeconsulting.org" className="flex items-center gap-2 text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <Mail className="h-6 w-6 text-[#A87C1F]" />
-              <span>info@epitomeconsulting.co.ke</span>
+              <span>info@epitomeconsulting.org</span>
             </a>
           </div>
           <div className="flex items-center gap-x-5">
