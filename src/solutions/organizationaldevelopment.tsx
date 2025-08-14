@@ -7,7 +7,6 @@ import {
   Handshake,
   Smile,
   BookMarked,
-  Star,
   Briefcase,
 } from "lucide-react";
 

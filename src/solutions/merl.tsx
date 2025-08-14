@@ -67,7 +67,7 @@ const MERL: React.FC = () => {
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-10 [mask-image:linear-gradient(to_bottom,white_100%,transparent)]"></div>
         <div className="relative max-w-5xl mx-auto px-6 py-24 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Monitoring, Evaluation, Research & Learning
+            Monitoring, Evaluation, & Learning
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
             Transforming data into decisions. We provide robust MERL solutions to measure your impact, drive learning, and guide strategy.
